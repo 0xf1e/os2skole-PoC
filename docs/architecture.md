@@ -134,4 +134,5 @@ Users shouldn't need to know (or care) that different components come from diffe
 # Further Reading
 
 [Further details from the deployer's/supplier's perspective](./deployment.md)
+
 [Non-Functional Requirements](./non_functional_requirements.md)
