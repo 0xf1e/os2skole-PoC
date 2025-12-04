@@ -18,13 +18,12 @@ C4Context
     %% PLATFORM DOMAIN
     System_Boundary(platform, "Platform Service Domain") {
       Container_Boundary(Keycloak, "Identity & Acess Management") {
-        Container(keycloak_core, "IAM Service", "Keycloak", "Manages authentication, authorization, and security")
-        
+        Container(keycloak_core, Identity & Access Management, "Keycloak", "Manages authentication, authorization, and security")
         %% Component definition inside the Container for visual grouping
-        Component(spi, "Service Provider Interface", "SPI - skolegrundata.jar", "Handles Skolegrunddata")
+        Component(spi, "Skolegrunddata Adapter", "Keycloak SPI - skolegrundata.jar", "Fetches attributes via SOAP and maps to OIDC claims")
       }
       System_Boundary(configmaps, "ConfigMaps") {
-        Component(config, "Identity Provider Configuration", "ConfigMap - realm.json", "Configures IDP & mappings")
+        Component(config, "UniLogin IDP config", "ConfigMap - realm.json", "Realm & broker configuration")
       }
     }
   }
