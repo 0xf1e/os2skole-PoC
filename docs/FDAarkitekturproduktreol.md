@@ -1,10 +1,22 @@
-# FDA Arkitekturprodukter
-Os2Skole
+# 🎓  Os2Skole
+## Arkitekturprodukter
 
-| Domæne (Række) | Konceptuel (Overbliksniveau) | Logisk (Designniveau) | Fysisk (Realiseringsniveau) |
+
+Dette dokument adresserer, hvordan en stor, formaliseret rammearkitektur – som den fællesoffentlige Digital Arkitektur (FDA), inspireret af `TOGAF` – kan implementeres pragmatisk i en `open source iterativ udviklingsproces`.
+
+Arkitekturprodukter udstilles i et **åbent, versionsstyret repositorie**. Dokumentationen følger principperne i `FDA arkitekturreolen` men realiseres ved at beskrive diagrammer vha. `C4-modellen` og kode dem direkte i `Mermaid` i `Markdown`. Denne tilgang sikrer, at arkitekturbeskrivelserne er tæt integreret med koden og understøtter en hurtig, iterativ udvikling.
+
+<br>
+
+## Arkitekturprodukter
+Modeleret efter [FDA Arkitekturreolen](https://arkitektur.digst.dk/metoder/arkitekturmetoder/introduktion-til-retningslinjer-formidling-og-dokumentation-af-0#arkitekturreol)
+
+<br>
+
+|  | Konceptuel (Overbliksniveau) | Logisk (Designniveau) | Fysisk (Realiseringsniveau) |
 | :--- | :--- | :--- | :--- |
 | **Styring** | **Styringsrammer:** <br> - Governancemodel <br> - Forretningsmål <br> - Interessentanalyse <br> - Kvalitetsplan | **Fremgangsmåde:** <br> - Gevinstmodel <br> - Metodeanvendelse | **Relaliseringsforløb:** <br> - Ændringsanmodningslog <br> - Arkitekturbeslutningslog <br> - Deployment-/stagingplan |
-| **Strategi** | **Vision og mål:** <br> - Vision / målbillede: <br> - Stretegiske kapabiliteter <br> - Udfordringer | **Målearkitektur (resumé):** <br> - [ ✅ Pricipper](https://github.com/OS2sandbox/os2skole-PoC/blob/main/docs/udviklings.manual_dk.md#principper) - Arkitekturprincipper <br> - Arkitekturcompliance <br> - Målarkitektur-resumé <br> - Migreringsstrategi | **Løsningsarkitektur (resumé):** <br> - Løsningsarkitektur-resumé |
+| **Strategi** | **Vision og mål:** <br> - Vision / målbillede: <br> - Stretegiske kapabiliteter <br> - Udfordringer | **Målearkitektur (resumé):** <br> - [ ✅ Pricipper](https://github.com/OS2sandbox/os2skole-PoC/blob/main/docs/udviklings.manual_dk.md#principper) <br> - Arkitekturprincipper <br> - Arkitekturcompliance <br> - Målarkitektur-resumé <br> - Migreringsstrategi | **Løsningsarkitektur (resumé):** <br> - Løsningsarkitektur-resumé |
 | **Jura** | **Juridiske rammer:** <br> - Juridiske bindinger | **Juridisk fortolkning:** <br> - Krav(samling) | **Juridisk praksis:** <br> - Databehandleraftaler <br> - Serviceaftaler (SLA) |
 | **Sikkerhed** | **Sikkerhedsstandard:** <br> - Sikkerhedsstrategi / -mønstre <br> - Trussels- og risiskokatalog | **Sikkerhedsmodeller og regler:** <br> - Sikkerhedsmodel | **Sikkerhedskontrol:** <br> - Sikkerhedskontroller |
 | **Opgaver** | **Forretningsstruktur:** <br> - Opgave- / servicekatalog <br> - Domænekatalog <br> - Proceslandskab | **Processer:** <br> - Aktør / roller <br> - Use case / user story <br> - Brugerrejse | **Arbejdstilrettelæggelse:** <br> - Arbejdsgang / -beskrivelse |
