@@ -2,13 +2,13 @@
 
 **Note: None of the following requirements have been reviewed or otherwise validated. They serve as a starting point for discussion. I advise caution especially when it comes to the specific numbers in this list.**
 
-**Use of LLM disclaimer: I have used an LLM model to convert the FURPS+ checklist into a questionnaire, and to convert my spoken answers into the following text. I have reviewed, corrected and extended upon the LLM's output.**
-
 ### Functionality
 **Access, Security, and Auditing**
 
 *   **Authentication:** Authentication is handled by external identity providers. The system must integrate with these providers. Users (students, teachers, parents) are authenticated based on their external identities. When a user logs out in the central IAM, this must be propagated to the individual components.
 *   **Authorization:** Roles are assigned based on the class the user belongs to within the school system, and their status as either teacher, student or parent. Changes in roles must be propagated to the individual components within one day. On first creation the role must be propagated immediately.
+-> Separation of Duties: different accounts for different kinds of permissions, one user may have multiple accouns
+e.g. privileged account may not chnage logging
 *   **Encryption:** All data must be encrypted at rest and in transit. This applies to data within a specific provider's boundary and during communication between different systems.
 *   **Audit Logging:** The system must provide a broad audit trace. The following actions must be logged with user attribution, time & date:
     *   Creation of new files.
@@ -22,7 +22,7 @@
 *   **Data Retention:**
     *   Audit logs must be retained for 90 days. (if legally permissible)
     *   Monitoring data (performance monitoring, system load stats) must be retained for 30 days.
-
+* Integration in OS2Skole central CSV surveillance system (which is part of OS2Skole Monitoring)
 ### Usability
 **Environment, Accessibility, and Training**
 
@@ -38,9 +38,9 @@
 ### Reliability
 **Availability and Recovery**
 
-*   **Uptime Targets:**
-    *   **School Hours (including one hour prior to start):** 99.999%.
-    *   **Outside School Hours:** 99.99%.
+*   **Uptime Targets:** (based on monthly downtime, maintenance not included)
+    *   **Particularly important school hours**: 99.995%
+    *   **School Hours (including one hour prior to start):** 99.95%
 *   **Maintenance:** Scheduled downtime or maintenance must occur outside of school hours and should be capable of running automatically.
 *   **Disaster Recovery (RTO - Recovery Time Objective):** In the event of a critical failure, the system must clearly be restored within a maximum of one day. Vendors must test their backops for integrity once a month.
 *   **Data Loss Limits (RPO - Recovery Point Objective):** Maximum data loss of 30 minutes is acceptable.
@@ -71,15 +71,16 @@
     *   Updates to the production environments must be performed as a slowed rollout.
 *   **Update Management:**
     *   It must be possible for a "human in the loop" on the OS2Skole project side to retain control over updates. Vendors must support automatic updates of their system.
-*   **Patching Time:** In the event of a major security vulnerability (e.g., similar to Log4j), the system must be capable of being patched with upstream vendor updates within **3 hours**.
+*   **Patching Time:** In the event of a major security vulnerability (e.g., similar to Log4j), the system must be capable of being patched with upstream vendor updates within **3 hours**. (TODO: what is the industry strandard here?)
 *   **Emergency Control:** It must be possible for OS2Skole to shut down the system if it cannot be operated safely.
 
 ### Constraints
 **Legal, Compliance, and Architecture**
 
 *   **Regulatory Compliance:** All components must adhere to the **GDPR**, the **Cyber Resiliency Act**, the **NIS-2** directive and the **WCAG 2.2 EU** guidelines.
-*   **Data Sovereignty:** All data must be processed and stored within the **European Union (EU)**. Data and applications must not be under the control of any entity falling under the legal jurisdiction of a non-EU country, including but not limited to frameworks like the U.S. CLOUD Act and FISA.
+* (national standards, fællesoffentlige rammearkitektur)
+*   **Data Sovereignty:** All data must be processed and stored within the **European Union (EU)**. Data and running processes (TODO: find better words) must not be under the control of any entity falling under the legal jurisdiction of a non-EU country, including but not limited to frameworks like the U.S. CLOUD Act and FISA. (CONSIDER: 'must be in compliance with EU regulatory ...' -- how do we ensure that for example Ukrainian resources can be used if appropriate?)
 *   **Vendor Neutrality:**
-    *   Vendors must not deploy custom forks of the upstream software. All customizations must be implemented as extensions, which are published and licensed under an OSI-approved license.
-    *   Custom configuration work must be limited in scope to ensure ease of competition for deployment by other providers (prevention of vendor lock-in).
-    *   If a vendor must add business logic to a deployment, for example to facilitate automatic deployment, this code must be shared with the upstream vendor under an OSI-approved license.
+    *   Vendors must not deploy custom forks of the upstream software. All customizations must be implemented as extensions, which are published and licensed under an OSI-approved license. (note: if change in fork, can be performed by having it be accepted upstream)
+    *   If a vendor must add business logic to a deployment, for example to facilitate automatic deployment, this code must be shared with the upstream vendor under an OSI-approved license. (Quality of offer is higher if there is high willingness to fully document deployment configuration)
+(NOTE/HUSKELISTEN: Something about a potential future integration into Gaia X? - integration with Gaia X is performed by OS2 Bestyrelsen - but we might make this a NICE TO HAVE for suppliers)
