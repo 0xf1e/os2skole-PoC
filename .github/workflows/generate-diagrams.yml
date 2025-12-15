@@ -1,0 +1,35 @@
+name: Generate PlantUML Diagrams
+
+# Triggers the workflow on push events for .puml files
+on:
+  push:
+    paths:
+      - "docs/diagrams/*.puml"
+
+# Sets permissions for the GITHUB_TOKEN to allow the action to commit and push changes
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks out the repository under $GITHUB_WORKSPACE, so the job can access it
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Uses the PlantUML action to generate SVG diagrams
+      - name: Generate PlantUML diagrams
+        uses: holowinski/plantuml-github-action@main
+        with:
+          # Arguments passed to the PlantUML generator
+          # -v for verbose output
+          # -tsvg to generate SVG files
+          # Path to the puml files
+          args: -v -tsvg docs/diagrams/*.puml
+
+      # Commits the generated SVG files back to the repository
+      - name: Commit generated diagrams
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-generate PlantUML diagrams"
