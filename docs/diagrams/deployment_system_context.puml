@@ -6,13 +6,11 @@ title File Drive Deployment, from a vendor's perspective
 ' Define custom tag for dashed lines
 AddRelTag("dashed", $lineStyle = DashedLine())
 
-' Left Side Elements (External)
+' External
 Person(user, "User")
 System_Ext(iam, "OS2Skole IAM")
 System_Ext(office, "Cloud Office Suite")
 System_Ext(lms, "Learning Management System")
-
-' Top Elements (External)
 System_Ext(monitor, "OS2Skole Monitoring")
 System_Ext(cicd, "OS2Skole CI/CD", "See 'CI/CD Pipeline' diagram on more details.")
 
@@ -43,14 +41,14 @@ BiRel(cluster, office, "exchange document file data")
 Rel(cluster, lms, "pulls document information from & pushes file shares to")
 Rel(cluster, monitor, "pushes logs to & pushes monitoring data to & pushes SBOM/CVE data to & pushes audit trace to")
 
-' Cluster internal connections (Down)
+' Cluster internal connections
 Rel(cluster, av, "queries")
 Rel(cluster, backup, "pushes file and user data to")
 
 ' Deployment Controller interactions
 Rel(controller, cluster, "performs rollout of")
 
-' CI/CD Pipeline flow (Right side loop)
+' CI/CD Pipeline flow
 Rel(vcs, cicd, "sends webhook indicating version update")
 Rel(cicd, vcs, "pulls environment information")
 Rel(cicd, controller, "requests update rollout")
