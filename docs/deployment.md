@@ -1,11 +1,11 @@
 # Infrastructure Architecture
 
-This diagram shows an example of what a cloud file storage deployment and integration could look like, from the vendor's perspective:
+The following diagram shows a File Drive Deployment from the vendor's perspective:
 
-![File Drive Deployment from the Vendor's Perspective](./diagrams/files_deployment_from_vendors_perspective.png)
+![File Drive Deployment from the Vendor's Perspective](./diagrams/deployment_system_context.svg)
 
 # Deployment
 
-This diagram shows what we currently envision a run of the CI/CD pipeline to look like:
+This diagram shows what we currently imagine a run of the CI/CD pipeline to look like:
 
 ![CI/CD Pipeline](./diagrams/cicd_pipeline.png)
