@@ -39,7 +39,7 @@ Rel(user, iam, "accesses portal provided by")
 Rel(cluster, iam, "pulls auth flow information from")
 BiRel(cluster, office, "exchange document file data")
 Rel(cluster, lms, "pulls document information from & pushes file shares to")
-Rel(cluster, monitor, "pushes logs to & pushes monitoring data to & pushes SBOM/CVE data to & pushes audit trace to")
+Rel(cluster, monitor, "pushes logs to & pushes monitoring data to & pushes SBOM/CVE data to & pushes audit traces to")
 
 ' Cluster internal connections
 Rel(cluster, av, "queries")
