@@ -18,18 +18,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Uses the PlantUML action to generate SVG diagrams
+      # Uses the PlantUML action to generate SVG diagrams and commit them
       - name: Generate PlantUML diagrams
-        uses: holowinski/plantuml-github-action@main
+        uses: grassedge/generate-plantuml-action@v1.5
         with:
-          # Arguments passed to the PlantUML generator
-          # -v for verbose output
-          # -tsvg to generate SVG files
-          # Path to the puml files
-          args: -v -tsvg docs/diagrams/*.puml
-
-      # Commits the generated SVG files back to the repository
-      - name: Commit generated diagrams
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Auto-generate PlantUML diagrams"
+          # The path to the directory containing the PlantUML files
+          path: docs/diagrams
+          # The commit message for the generated diagrams
+          message: "Auto-generate PlantUML diagrams"
+        env:
+          # Provide the GITHUB_TOKEN to allow the action to commit to the repository
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
