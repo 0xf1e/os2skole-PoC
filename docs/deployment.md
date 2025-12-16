@@ -6,6 +6,6 @@ The following diagram shows a File Drive Deployment from the vendor's perspectiv
 
 # Deployment
 
-This diagram shows what we currently imagine a run of the CI/CD pipeline to look like:
+This diagram shows what we currently imagine a run of the CI/CD pipeline to look like, from our perspective:
 
-![CI/CD Pipeline](./diagrams/cicd_pipeline.png)
+![CI/CD Pipeline: From OS2Skole administrations perspective](./diagrams/pipeline_dynamic_diagram.svg)
