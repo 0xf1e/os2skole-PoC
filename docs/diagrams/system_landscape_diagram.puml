@@ -27,7 +27,7 @@ Person(admin1, "OS2Skole Administrator")
 Person(admin2, "OS2Skole Administrator")
 
 ' --- Middle Center: Partners/External Apps ---
-Boundary(b_partners, "User-Facing Applications") {
+Boundary(b_partners, "External user-facing applications") {
     System_Ext(gen_ai, "Generative AI Platform", "For example SkoleGPT")
     System_Ext(comm_plat, "School Communication Platform", "For example Aula")
     System_Ext(lms, "Learning Management System", "For example MinUddannelse or MeeBook")
@@ -52,7 +52,7 @@ Boundary(b_service, "OS2Skole Service") {
     }
 
     ' Sub-group: User Facing Internal Apps
-    Boundary(b_int_apps, "User-facing applications") {
+    Boundary(b_int_apps, "Internal user-facing applications") {
         System(classroom, "Classroom Management System")
         System(cloud, "Cloud Drive")
         System(groupware, "Groupware UI", "Description of software system.")
@@ -88,6 +88,9 @@ Rel(iam, idp, "Initiate authentication flow")
 Rel(idp, iam, "Authentication Flow Response")
 Rel(admin1, audit, "reviews")
 Rel(admin2, deploy, "reviews")
+Rel(b_partners, iam, "requests authentication")
+Rel(b_int_apps, iam, "requests authentication")
+BiRel(dashboard, b_int_apps, "redirect to")
 
 ' Note: No relationships (arrows) were visible in the source image, 
 ' so none are defined here. Add Rel(from, to, label) commands to connect them.
