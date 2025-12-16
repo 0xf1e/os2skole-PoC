@@ -1,28 +1,27 @@
 @startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 
-title CI/CD Pipeline: From OS2Skole Administrator's perspective
+title CI/CD Pipeline: From OS2Skole administration's perspective
 
 ' --- External Actors ---
 Person_Ext(vendor_a, "Vendor A")
 System_Ext(delivery_vendor_a, "Delivery (Vendor A)", "")
-System_Ext(delivery_all_vendors_nego, "Delivery (All Vendors)", "")
-System_Ext(delivery_all_vendors_outcome, "Delivery (All Vendors)", "")
-System_Ext(delivery_vendor_a_prod, "Delivery (Vendor A)", "")
 
 Rel(vendor_a, delivery_vendor_a, "pushes new configuration of their software to")
 
 ' --- Step 1: Test Preparation ---
-Boundary(step1, "Step 1: Test Preparation", $type="System") {
+Boundary(step1, "1. Test Preparation", $type="Step") {
     System(os2skole_2_test_prep, "Delivery (OS2Skole)")
+    System_Ext(delivery_all_vendors_nego, "Delivery (All Vendors)", "")
 }
 
 Rel(delivery_vendor_a, os2skole_2_test_prep, "pushes notification about new configuration")
 BiRel(delivery_all_vendors_nego, os2skole_2_test_prep, "negotiate deployment of test environment(s)")
 
 ' --- Step 2: Testing & Outcome ---
-Boundary(step2, "Step 2: Testing & Outcome", $type="System") {
-    System(os2skole_3_update, "Delivery (OS2Skole)")
+Boundary(step2, "2. Testing & Outcome", $type="Step") {
+    System(os2skole_3_update, "Delivery (OS2Skole)", "Runs test suite, comprising of Integration Tests, System Tests, Load Tests, Accessibility Tests, and potentially others")
+    System_Ext(delivery_all_vendors_outcome, "Delivery (All Vendors)", "")
     ContainerDb(prod_decl, "OS2Skole Production Declaration", "System Declaration", "Declaration that describes all expected components of the OS2Skole system")
 }
 
@@ -31,10 +30,11 @@ Rel(os2skole_3_update, delivery_all_vendors_outcome, "sends test outcome to")
 Rel(os2skole_3_update, prod_decl, "if successful, updates")
 
 ' --- Step 3: Production Rollout ---
-Boundary(step3, "Step 3: Production Rollout", $type="System") {
+Boundary(step3, "3. Production Rollout", $type="Step") {
     System(os2skole_4_rollout, "Delivery (OS2Skole)")
     Person(admin, "Administrator", "")
     System(prod_env, "OS2Skole Production\nEnvironment")
+    System_Ext(delivery_vendor_a_prod, "Delivery (Vendor A)", "")
 }
 
 Rel(os2skole_3_update, os2skole_4_rollout, "if successful, requests rollout of new configuration")
