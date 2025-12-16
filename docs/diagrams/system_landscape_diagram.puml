@@ -77,6 +77,7 @@ Boundary(b_skole_data, "System name") {
 
 Boundary(b_ext_cal, "System name") {
     System_Ext(ext_cal_serv, "External Calendar Service")
+    System(cal_conv, "Calendar Format Conversion System", "Description of software system.")
 }
 
 ' Relationships
@@ -100,6 +101,9 @@ BiRel(cloud, office, "Exchange Information")
 Rel(classroom, share, "requests information and actions")
 Rel(iam, skole_data, "requests information")
 Rel(b_service, audit, "sends audit traces, logs and telemetry to")
+Rel(deploy, b_service, "Rolls out updates of")
+Rel(cal_conv, cal, "informed about updated events")
+Rel(cal, cal_conv, "requests calendar data")
 
 ' Note: No relationships (arrows) were visible in the source image, 
 ' so none are defined here. Add Rel(from, to, label) commands to connect them.
