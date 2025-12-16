@@ -1,0 +1,85 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+' Layout configuration
+LAYOUT_TOP_DOWN()
+' COMPACT_DIR() can be used if horizontal space is tight
+
+title C4 System Landscape Diagram
+
+' --- Top Left: End User System Group ---
+Boundary(b_enduser, "End User System") {
+    System_Ext(mdm, "MDM", "Description of external software system.")
+    System_Ext(lst, "LST Software", "Description of external software system.")
+    System_Ext(local_os, "Local System OS", "Description of external software system.")
+    
+    Person_Ext(user, "End User", "For example a student, teacher or parent.")
+}
+
+' --- Middle Left: Identity Providers ---
+Boundary(b_idp, "System name") {
+    System_Ext(idp, "Identity Providers (multiple)", "For example EasyIQ or UniLogin")
+}
+
+' --- Top Right: Administrators ---
+' Placed outside boundaries as per diagram
+Person(admin1, "OS2Skole Administrator")
+Person(admin2, "OS2Skole Administrator")
+
+' --- Middle Center: Partners/External Apps ---
+Boundary(b_partners, "User-Facing Applications") {
+    System_Ext(gen_ai, "Generative AI Platform", "For example SkoleGPT")
+    System_Ext(comm_plat, "School Communication Platform", "For example Aula")
+    System_Ext(lms, "Learning Management System", "For example MinUddannelse or MeeBook")
+    System_Ext(resources, "Teaching Resource Portals (multiple)", "For example Gyldendal or Alinea portals")
+    System_Ext(video_plat, "Private Video Platform", "For example SkoleTube")
+}
+
+' --- Middle Right: Delivery Platform ---
+Boundary(b_delivery, "OS2Skole Delivery Platform") {
+    System(audit, "Auditing & Monitoring Platform", "Description of software system.")
+    System(deploy, "Test & Deployment Platform", "Includes Version Control System")
+}
+
+' --- MAIN BLOCK: OS2Skole Service ---
+Boundary(b_service, "OS2Skole Service") {
+    
+    ' Sub-group: Left Core Infrastructure
+    Boundary(b_core, "System name") {
+        System(dashboard, "Dashboard Portal", "Description of software system.")
+        System(iam, "Identity & Access Management", "Description of software system.")
+        System(iam_cal, "IAM to Calendar Conversion", "Description of software system.")
+    }
+
+    ' Sub-group: User Facing Internal Apps
+    Boundary(b_int_apps, "User-facing applications") {
+        System(classroom, "Classroom Management System")
+        System(cloud, "Cloud Drive")
+        System(groupware, "Groupware UI", "Description of software system.")
+        System(web_build, "Websuite builder")
+        System(meet, "Video Meeting Platform", "Description of software system.")
+    }
+
+    ' Sub-group: Office/Utility Services
+    Boundary(b_utility, "System name") {
+        System(office, "Office Suite")
+        System(share, "File Share System")
+        System(cal, "Calendar service")
+        System(email, "Email service")
+        System(addr, "Address Book Service")
+    }
+}
+
+' --- Bottom: External Data Services ---
+Boundary(b_skole_data, "System name") {
+    System_Ext(skole_data, "Skolegrunddata Service", "Description of external software system.")
+}
+
+Boundary(b_ext_cal, "System name") {
+    System_Ext(ext_cal_serv, "External Calendar Service")
+}
+
+' Note: No relationships (arrows) were visible in the source image, 
+' so none are defined here. Add Rel(from, to, label) commands to connect them.
+
+@enduml
