@@ -42,7 +42,7 @@ Boundary(b_service, "OS2Skole Service") {
     Boundary(b_core, "System name") {
         System(dashboard, "Dashboard Portal", "Description of software system.")
         System(iam, "Identity & Access Management", "Description of software system.")
-        System(iam_cal, "IAM to Calendar Conversion", "Description of software system.")
+        System(iam_addr, "IAM to Address Book Conversion", "Description of software system.")
     }
 
     ' Sub-group: User Facing Internal Apps
@@ -55,7 +55,7 @@ Boundary(b_service, "OS2Skole Service") {
     }
 
     ' Sub-group: Office/Utility Services
-    Boundary(b_utility, "System name") {
+    Boundary(b_utility, "Communication & Collaboration Services") {
         System(office, "Office Suite")
         System(share, "File Share System")
         System(cal, "Calendar service")
@@ -97,5 +97,7 @@ Rel(cal_conv, cal, "informed about updated events")
 Rel(cal, cal_conv, "requests calendar data")
 Rel(ext_cal_serv, cal_conv, "informs about updated events")
 Rel(cal_conv, ext_cal_serv, "requests calendar data")
+Rel(iam, iam_addr, "Informs about updated identities")
+Rel(iam_addr, addr, "requests update of address book information")
 
 @enduml
