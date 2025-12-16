@@ -11,9 +11,12 @@ Rel(vendor_a, delivery_vendor_a, "pushes new configuration of their software to"
 
 ' --- Step 1: Test Preparation ---
 Boundary(step1, "1. Test Preparation", $type="Step") {
-    System(os2skole_2_test_prep, "Delivery (OS2Skole)")
     System_Ext(delivery_all_vendors_nego, "Delivery (All Vendors)", "")
+    System(os2skole_2_test_prep, "Delivery (OS2Skole)")
 }
+    note left of os2skole_2_test_prep
+    Delivery refers to the version control system, the CI/CD platform, and any related logic.
+    end note
 
 Rel(delivery_vendor_a, os2skole_2_test_prep, "pushes notification about new configuration")
 BiRel(delivery_all_vendors_nego, os2skole_2_test_prep, "negotiate deployment of test environment(s)")
@@ -42,8 +45,5 @@ Rel(admin, os2skole_4_rollout, "confirms approval of update to")
 BiRel(delivery_vendor_a_prod, os2skole_4_rollout, "negotiate rollout of new configuration")
 Rel(os2skole_4_rollout, prod_env, "performs rollout of new configuration of")
 
-note bottom of page
-  In this diagram, "Delivery" refers to the version control system and the CI/CD platform.
-end note
 
 @enduml
