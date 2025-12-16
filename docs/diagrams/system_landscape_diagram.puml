@@ -1,10 +1,6 @@
 @startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
 
-' Layout configuration
-LAYOUT_TOP_DOWN()
-' COMPACT_DIR() can be used if horizontal space is tight
-
 title C4 System Landscape Diagram
 
 ' --- Top Left: End User System Group ---
@@ -101,8 +97,5 @@ Rel(cal_conv, cal, "informed about updated events")
 Rel(cal, cal_conv, "requests calendar data")
 Rel(ext_cal_serv, cal_conv, "informs about updated events")
 Rel(cal_conv, ext_cal_serv, "requests calendar data")
-
-' Note: No relationships (arrows) were visible in the source image, 
-' so none are defined here. Add Rel(from, to, label) commands to connect them.
 
 @enduml
