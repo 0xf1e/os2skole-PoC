@@ -42,4 +42,8 @@ Rel(admin, os2skole_4_rollout, "confirms approval of update to")
 BiRel(delivery_vendor_a_prod, os2skole_4_rollout, "negotiate rollout of new configuration")
 Rel(os2skole_4_rollout, prod_env, "performs rollout of new configuration of")
 
+note
+  In this diagram, "Delivery" refers to the version control system and the CI/CD platform.
+end note
+
 @enduml
