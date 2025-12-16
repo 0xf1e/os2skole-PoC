@@ -32,7 +32,7 @@ Boundary(b_partners, "External user-facing applications") {
 ' --- Middle Right: Delivery Platform ---
 Boundary(b_delivery, "OS2Skole Delivery Platform") {
     System(audit, "Auditing & Monitoring Platform")
-    System(deploy, "Test & Deployment Platform", "Includes Version Control System")
+    System(deploy, "Test & Deployment Platform", "Includes Version Control System, 🔍 see deployment diagram.")
 }
 
 ' --- MAIN BLOCK: OS2Skole Service ---
@@ -48,7 +48,7 @@ Boundary(b_service, "OS2Skole Service") {
     ' Sub-group: User Facing Internal Apps
     Boundary(b_int_apps, "Internal user-facing applications") {
         System(classroom, "Classroom Management System")
-        System(cloud, "Cloud Drive")
+        System(cloud, "Cloud Drive", "🔍 see Cloud Drive from a supplier's perspective diagram.")
         System(groupware, "Groupware UI")
         System(web_build, "Websuite builder")
         System(meet, "Video Meeting Platform")
