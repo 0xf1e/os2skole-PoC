@@ -80,6 +80,9 @@ Boundary(b_ext_cal, "System name") {
 }
 
 ' Relationships
+Rel(user, dashboard, "accesses")
+Rel(mdm, local_os, "provisions")
+Rel(local_os, lst, "requests information from")
 Rel(iam, idp, "Initiate authentication flow")
 Rel(idp, iam, "Authentication Flow Response")
 
