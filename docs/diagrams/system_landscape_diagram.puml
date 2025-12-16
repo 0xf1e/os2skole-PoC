@@ -17,9 +17,7 @@ Boundary(b_enduser, "End User System") {
 }
 
 ' --- Middle Left: Identity Providers ---
-Boundary(b_idp, "System name") {
-    System_Ext(idp, "Identity Providers (multiple)", "For example EasyIQ or UniLogin")
-}
+System_Ext(idp, "Identity Providers (multiple)", "For example EasyIQ or UniLogin")
 
 ' --- Top Right: Administrators ---
 ' Placed outside boundaries as per diagram
@@ -68,17 +66,14 @@ Boundary(b_service, "OS2Skole Service") {
         System(email, "Email service")
         System(addr, "Address Book Service")
     }
+
+    ' Calendar Converter placed at the top level of the boundary
+    System(cal_conv, "Calendar Converter", "Description of software system.")
 }
 
 ' --- Bottom: External Data Services ---
-Boundary(b_skole_data, "System name") {
-    System_Ext(skole_data, "Skolegrunddata Service", "Description of external software system.")
-}
-
-Boundary(b_ext_cal, "System name") {
-    System_Ext(ext_cal_serv, "External Calendar Service")
-    System(cal_conv, "Calendar Format Conversion System", "Description of software system.")
-}
+System_Ext(skole_data, "Skolegrunddata Service", "Description of external software system.")
+System_Ext(ext_cal_serv, "External Calendar Service")
 
 ' Relationships
 BiRel(user, local_os, "Interacts")
@@ -104,6 +99,8 @@ Rel(b_service, audit, "sends audit traces, logs and telemetry to")
 Rel(deploy, b_service, "Rolls out updates of")
 Rel(cal_conv, cal, "informed about updated events")
 Rel(cal, cal_conv, "requests calendar data")
+Rel(ext_cal_serv, cal_conv, "informs about updated events")
+Rel(cal_conv, ext_cal_serv, "requests calendar data")
 
 ' Note: No relationships (arrows) were visible in the source image, 
 ' so none are defined here. Add Rel(from, to, label) commands to connect them.
