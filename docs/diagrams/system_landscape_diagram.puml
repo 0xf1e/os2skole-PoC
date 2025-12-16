@@ -41,12 +41,12 @@ Boundary(b_service, "OS2Skole Service") {
     ' Sub-group: Left Core Infrastructure
     Boundary(b_core, "Core Identity & Access Services", "🔍 See identity and access architecture diagram.") {
         System(dashboard, "Dashboard Portal")
-        System(iam, "Identity & Access Management")
+        System(iam, "Identity & Access Management", "configured to be compliant with applicable security regulations.")
         System(iam_addr, "IAM to Address Book Conversion")
     }
 
     ' Sub-group: User Facing Internal Apps
-    Boundary(b_int_apps, "Internal user-facing applications") {
+    Boundary(b_int_apps, "Internal user-facing applications", "configured with Danish localization and OS2skole-specific theming.") {
         System(classroom, "Classroom Management System")
         System(cloud, "Cloud Drive", "🔍 see Cloud Drive from a supplier's perspective diagram.")
         System(groupware, "Groupware UI")
