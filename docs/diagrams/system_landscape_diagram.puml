@@ -79,6 +79,9 @@ Boundary(b_ext_cal, "System name") {
     System_Ext(ext_cal_serv, "External Calendar Service")
 }
 
+' Relationships
+Rel(iam, idp, "Initiate authentication flow")
+
 ' Note: No relationships (arrows) were visible in the source image, 
 ' so none are defined here. Add Rel(from, to, label) commands to connect them.
 
