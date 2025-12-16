@@ -1,0 +1,51 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+' LEFT TO RIGHT DIRECTION
+' skinparam linetype ortho
+
+title CI/CD Pipeline: From OS2Skole Administrator's perspective
+
+' --- Step 1: Ingestion ---
+Person_Ext(vendor_a, "Vendor A")
+System_Ext(delivery_vendor_a, "Delivery (Vendor A)", "")
+System(os2skole_1_notification, "Delivery (OS2Skole)")
+
+' Relationships Step 1
+Rel(vendor_a, delivery_vendor_a, "pushes new configuration of their software to")
+Rel(delivery_vendor_a, os2skole_1_notification, "pushes notification about new configuration")
+
+
+' --- Step 2: Negotiation & Prep ---
+System_Ext(delivery_all_vendors_nego, "Delivery (All Vendors)", "")
+System(os2skole_2_test_prep, "Delivery (OS2Skole)")
+
+' Relationships Step 2
+BiRel(delivery_all_vendors_nego, os2skole_1_notification, "negotiate deployment of test environment(s)")
+Rel(os2skole_1_notification, os2skole_2_test_prep, " (all test environment configuration received)", "dashed")
+
+
+' --- Step 3: Testing & Outcome ---
+System_Ext(delivery_all_vendors_outcome, "Delivery (All Vendors)", "")
+System(os2skole_3_update, "Delivery (OS2Skole)")
+ContainerDb(prod_decl, "OS2Skole Production Declaration", "System Declaration", "Declaration that describes all expected components of the OS2Skole system")
+
+' Relationships Step 3
+Rel(os2skole_2_test_prep, os2skole_3_update, "requests run of test suite on test environments")
+Rel(os2skole_3_update, delivery_all_vendors_outcome, "sends test outcome to")
+Rel(os2skole_3_update, prod_decl, "if successful, updates")
+
+
+' --- Step 4: Production Rollout ---
+System(os2skole_4_rollout, "Delivery (OS2Skole)")
+Person(admin, "Administrator", "")
+System_Ext(delivery_vendor_a_prod, "Delivery (Vendor A)", "")
+System(prod_env, "OS2Skole Production\nEnvironment")
+
+' Relationships Step 4
+Rel(os2skole_3_update, os2skole_4_rollout, "if successful, requests rollout of new configuration")
+Rel(admin, os2skole_4_rollout, "confirms approval of update to")
+BiRel(delivery_vendor_a_prod, os2skole_4_rollout, "negotiate rollout of new configuration")
+Rel(os2skole_4_rollout, prod_env, "performs rollout of new configuration of")
+
+@enduml
