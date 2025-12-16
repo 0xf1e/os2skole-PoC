@@ -80,11 +80,14 @@ Boundary(b_ext_cal, "System name") {
 }
 
 ' Relationships
-Rel(user, dashboard, "accesses")
+BiRel(user, local_os, "Interacts")
+Rel(local_os, dashboard, "accesses")
 Rel(mdm, local_os, "provisions")
 Rel(local_os, lst, "requests information from")
 Rel(iam, idp, "Initiate authentication flow")
 Rel(idp, iam, "Authentication Flow Response")
+Rel(admin1, audit, "reviews")
+Rel(admin2, deploy, "reviews")
 
 ' Note: No relationships (arrows) were visible in the source image, 
 ' so none are defined here. Add Rel(from, to, label) commands to connect them.
