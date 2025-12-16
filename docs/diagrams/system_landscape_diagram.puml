@@ -21,13 +21,7 @@ Person(admin1, "OS2Skole Administrator")
 Person(admin2, "OS2Skole Administrator")
 
 ' --- Middle Center: Partners/External Apps ---
-Boundary(b_partners, "External user-facing applications") {
-    System_Ext(gen_ai, "Generative AI Platform", "For example SkoleGPT")
-    System_Ext(comm_plat, "School Communication Platform", "For example Aula")
-    System_Ext(lms, "Learning Management System", "For example MinUddannelse or MeeBook")
-    System_Ext(resources, "Teaching Resource Portals (multiple)", "For example Gyldendal or Alinea portals")
-    System_Ext(video_plat, "Private Video Platform", "For example SkoleTube")
-}
+System_Ext(partners, "External user-facing applications", "Multiple systems, e.g., SkoleGPT, Aula, MinUddannelse, MeeBook, Gyldendal/Alinea portals, SkoleTube")
 
 ' --- Middle Right: Delivery Platform ---
 Boundary(b_delivery, "OS2Skole Delivery Platform") {
@@ -80,10 +74,10 @@ Rel(iam, idp, "Initiate authentication flow")
 Rel(idp, iam, "Authentication Flow Response")
 Rel(admin1, audit, "reviews")
 Rel(admin2, deploy, "reviews")
-Rel(b_partners, iam, "requests authentication")
+Rel(partners, iam, "requests authentication")
 Rel(b_int_apps, iam, "requests authentication")
 Rel(dashboard, b_int_apps, "redirect to")
-Rel(dashboard, b_partners, "redirect to")
+Rel(dashboard, partners, "redirect to")
 Rel(groupware, cal, "requests information and actions")
 Rel(groupware, addr, "requests information and actions")
 Rel(groupware, email, "requests information and actions")
@@ -99,6 +93,6 @@ Rel(ext_cal_serv, cal_conv, "informs about updated events")
 Rel(cal_conv, ext_cal_serv, "requests calendar data")
 Rel(iam, iam_addr, "Informs about updated identities")
 Rel(iam_addr, addr, "requests update of address book information")
-Rel(classroom, video_plat, "requests information about user content")
+Rel(classroom, partners, "requests information about user content (specific systems)")
 
 @enduml
