@@ -1,7 +1,7 @@
 @startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
 
-title C4 System Landscape Diagram
+title OS2Skole System Landscape
 
 ' --- Top Left: End User System Group ---
 Boundary(b_enduser, "End User System") {
