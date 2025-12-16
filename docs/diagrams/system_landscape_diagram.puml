@@ -39,7 +39,7 @@ Boundary(b_delivery, "OS2Skole Delivery Platform") {
 Boundary(b_service, "OS2Skole Service") {
     
     ' Sub-group: Left Core Infrastructure
-    Boundary(b_core, "System name") {
+    Boundary(b_core, "Core Identity & Access Services") {
         System(dashboard, "Dashboard Portal", "Description of software system.")
         System(iam, "Identity & Access Management", "Description of software system.")
         System(iam_addr, "IAM to Address Book Conversion", "Description of software system.")
@@ -55,7 +55,7 @@ Boundary(b_service, "OS2Skole Service") {
     }
 
     ' Sub-group: Office/Utility Services
-    Boundary(b_utility, "Communication & Collaboration Services") {
+    Boundary(b_utility, "Service Backends/Protocol Servers") {
         System(office, "Office Suite")
         System(share, "File Share System")
         System(cal, "Calendar service")
