@@ -100,6 +100,5 @@ Rel(cal_conv, ext_cal_serv, "requests calendar data")
 Rel(iam, iam_addr, "Informs about updated identities")
 Rel(iam_addr, addr, "requests update of address book information")
 Rel(classroom, video_plat, "requests information about user content")
-Rel(classroom, resources, "Redirect to")
 
 @enduml
