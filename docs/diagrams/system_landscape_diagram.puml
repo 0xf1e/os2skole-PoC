@@ -93,6 +93,11 @@ Rel(b_int_apps, iam, "requests authentication")
 Rel(dashboard, b_int_apps, "redirect to")
 Rel(dashboard, b_partners, "redirect to")
 Rel(groupware, cal, "requests information and actions")
+Rel(groupware, addr, "requests information and actions")
+Rel(groupware, email, "requests information and actions")
+Rel(cloud, share, "requests information and actions")
+BiRel(cloud, office, "Exchange Information")
+Rel(classroom, share, "requests information and actions")
 
 ' Note: No relationships (arrows) were visible in the source image, 
 ' so none are defined here. Add Rel(from, to, label) commands to connect them.
