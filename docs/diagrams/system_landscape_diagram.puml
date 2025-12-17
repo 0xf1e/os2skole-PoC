@@ -21,7 +21,7 @@ Person(admin1, "OS2Skole Administrator")
 Person(admin2, "OS2Skole Administrator")
 
 ' --- Middle Center: Partners/External Apps ---
-System_Ext(partners, "External user-facing applications", "Multiple systems, e.g., SkoleGPT, Aula, MinUddannelse, MeeBook, Gyldendal/Alinea portals, SkoleTube")
+System_Ext(partners, "External user-facing applications (multiple)", "e.g., SkoleGPT, Aula, MinUddannelse, MeeBook, Gyldendal/Alinea portals, SkoleTube")
 
 ' --- Middle Right: Delivery Platform ---
 Boundary(b_delivery, "OS2Skole Delivery Platform") {
