@@ -15,62 +15,59 @@
 
 ---
 
-## Detailed Information
-
 ### 💡[1] Deployment-/stagingplan
 
 - Ad hoc discussion starter: [https://github.com/0xf1e/os2skole-PoC/blob/updated-architecture-progress/docs/deployment.md](https://github.com/0xf1e/os2skole-PoC/blob/updated-architecture-progress/docs/deployment.md) (draft of the deployment process in the second diagram, draft of the different environments in the first diagram)
-- Ongoing discussion: [http://example.com](http://example.com)
+- Ongoing discussion: [http://example.com/#TODO](http://example.com/#TODO)
 
 ### 💡[2] Løsningsarkitektur-resumé
 
 - Ad hoc discussion starter: [https://github.com/0xf1e/os2skole-PoC/blob/updated-architecture-progress/docs/architecture.md#automated-testing-and-cicd](https://github.com/0xf1e/os2skole-PoC/blob/updated-architecture-progress/docs/architecture.md#automated-testing-and-cicd) (description of the architecture)
-- Ongoing discussion: [http://example.com](http://example.com)
+- Ongoing discussion: [http://example.com/#TODO](http://example.com/#TODO)
 
 ### 💡[3] Serviceaftaler (SLA)
 
 - Ad hoc discussion starter: [https://github.com/0xf1e/os2skole-PoC/blob/updated-architecture-progress/docs/non_functional_requirements.md](https://github.com/0xf1e/os2skole-PoC/blob/updated-architecture-progress/docs/non_functional_requirements.md) (text about non-technical requirements)
-- Ongoing discussion: [http://example.com](http://example.com)
+- Ongoing discussion: [http://example.com/#TODO](http://example.com/#TODO)
 
 ### 💡[4] Sikkerhedsstrategi / -mønstre
 
 - Ad hoc discussion starter: [https://github.com/0xf1e/os2skole-PoC/blob/updated-architecture-progress/docs/deployment.md#infrastructure-architecture](https://github.com/0xf1e/os2skole-PoC/blob/updated-architecture-progress/docs/deployment.md#infrastructure-architecture) (some of the requirements in the diagram describe security controls)
-- Ongoing discussion: [http://example.com](http://example.com)
+- Ongoing discussion: [http://example.com/#TODO](http://example.com/#TODO)
 
 ### 💡[5] Sikkerhedskontroller
 
 - Ad hoc discussion starter: [https://github.com/0xf1e/os2skole-PoC/blob/updated-architecture-progress/docs/deployment.md#infrastructure-architecture](https://github.com/0xf1e/os2skole-PoC/blob/updated-architecture-progress/docs/deployment.md#infrastructure-architecture) (some of the requirements in the diagram describe security controls)
-- Ongoing discussion: [http://example.com](http://example.com)
+- Ongoing discussion: [http://example.com/#TODO](http://example.com/#TODO)
 
 ### 💡[6] Use case / user story
 
 - Work in progress: [https://github.com/OS2sandbox/os2skole-PoC/issues/23](https://github.com/OS2sandbox/os2skole-PoC/issues/23) (one internal user story session has been held)
-- Ongoing discussion: [http://example.com](http://example.com)
 
 ### 💡[7] Brugerrejse
 
-- Ongoing discussion: [http://example.com](http://example.com) (currently in private document)
+- Ongoing discussion: [http://example.com/#TODO](http://example.com/#TODO) (currently in private document)
 
 ### 💡[8] Arbejdsgang / -beskrivelse
 
-- Ongoing discussion: [http://example.com](http://example.com) (summary of meeting about iterative work, and open questions: [https://github.com/OS2sandbox/os2skole-PoC/issues/23#issuecomment-3596994415](https://github.com/OS2sandbox/os2skole-PoC/issues/23#issuecomment-3596994415), [https://github.com/OS2sandbox/os2skole-PoC/issues/33](https://github.com/OS2sandbox/os2skole-PoC/issues/33), [https://github.com/OS2sandbox/os2skole-PoC/issues/34](https://github.com/OS2sandbox/os2skole-PoC/issues/34), [https://github.com/OS2sandbox/os2skole-PoC/issues/36](https://github.com/OS2sandbox/os2skole-PoC/issues/36))
+- Ongoing discussion: [http://example.com/#TODO](http://example.com/#TODO) (summary of meeting about iterative work, and open questions: [https://github.com/OS2sandbox/os2skole-PoC/issues/23#issuecomment-3596994415](https://github.com/OS2sandbox/os2skole-PoC/issues/23#issuecomment-3596994415), [https://github.com/OS2sandbox/os2skole-PoC/issues/33](https://github.com/OS2sandbox/os2skole-PoC/issues/33), [https://github.com/OS2sandbox/os2skole-PoC/issues/34](https://github.com/OS2sandbox/os2skole-PoC/issues/34), [https://github.com/OS2sandbox/os2skole-PoC/issues/36](https://github.com/OS2sandbox/os2skole-PoC/issues/36))
 
 ### 💡[9] Applikationslandskab / -integration
 
 - Ad hoc discussion starter: [https://github.com/0xf1e/os2skole-PoC/blob/updated-architecture-progress/docs/architecture.md#os2skole-infrastructure-overview](https://github.com/0xf1e/os2skole-PoC/blob/updated-architecture-progress/docs/architecture.md#os2skole-infrastructure-overview) (information collected for cost estimate, including component interactions)
-- Ongoing discussion: [http://example.com](http://example.com) (refining cost estimates and component interactions)
+- Ongoing discussion: [http://example.com/#TODO](http://example.com/#TODO) (refining cost estimates and component interactions)
 
 ### 💡[10] Løsningskomponent
 
 - Ad hoc discussion starter: [internal spreadsheet] (a list of desired components which has been created and shared for the purpose of having Zangenberg estimate our cost)
-- Ongoing discussion: [http://example.com](http://example.com) (Zangenberg's assessment of the components and work required)
+- Ongoing discussion: [http://example.com/#TODO](http://example.com/#TODO) (Zangenberg's assessment of the components and work required)
 
 ### 💡[11] Infrastrukturopsætning
 
 Specific infrastructure decisions will be made in cooperation and exchange with suppliers.
 
 - Ad hoc discussion starter: [https://github.com/0xf1e/os2skole-PoC/blob/updated-architecture-progress/docs/diagrams/files_deployment_from_vendors_perspective.png](https://github.com/0xf1e/os2skole-PoC/blob/updated-architecture-progress/docs/diagrams/files_deployment_from_vendors_perspective.png), [https://github.com/0xf1e/os2skole-PoC/blob/updated-architecture-progress/docs/diagrams/architecture.png](https://github.com/0xf1e/os2skole-PoC/blob/updated-architecture-progress/docs/diagrams/architecture.png) (diagrams showing infrastructure concerns)
-- Ongoing discussion: [http://example.com](http://example.com) (conversations are taking place and infrastructure specifications are being discussed internally)
+- Ongoing discussion: [http://example.com/#TODO](http://example.com/#TODO) (conversations are taking place and infrastructure specifications are being discussed internally)
 
 ### 💡[12] Informationsmodel
 
