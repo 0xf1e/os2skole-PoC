@@ -18,12 +18,12 @@
 ### 💡[1] Deployment-/stagingplan
 
 - Ad hoc discussion starter: [https://github.com/0xf1e/os2skole-PoC/blob/updated-architecture-progress/docs/deployment.md](https://github.com/0xf1e/os2skole-PoC/blob/updated-architecture-progress/docs/deployment.md) (draft of the deployment process in the second diagram, draft of the different environments in the first diagram)
-- Ongoing discussion: [http://example.com/#TODO](http://example.com/#TODO)
+- Ongoing discussion: https://github.com/OS2sandbox/os2skole-PoC/pull/44
 
 ### 💡[2] Løsningsarkitektur-resumé
 
 - Ad hoc discussion starter: [https://github.com/0xf1e/os2skole-PoC/blob/updated-architecture-progress/docs/architecture.md#automated-testing-and-cicd](https://github.com/0xf1e/os2skole-PoC/blob/updated-architecture-progress/docs/architecture.md#automated-testing-and-cicd) (description of the architecture)
-- Ongoing discussion: [http://example.com/#TODO](http://example.com/#TODO)
+- Ongoing discussion: https://github.com/OS2sandbox/os2skole-PoC/pull/46
 
 ### 💡[3] Serviceaftaler (SLA)
 
@@ -33,7 +33,7 @@
 ### 💡[4] Sikkerhedsstrategi / -mønstre
 
 - Ad hoc discussion starter: [https://github.com/0xf1e/os2skole-PoC/blob/updated-architecture-progress/docs/deployment.md#infrastructure-architecture](https://github.com/0xf1e/os2skole-PoC/blob/updated-architecture-progress/docs/deployment.md#infrastructure-architecture) (some of the requirements in the diagram describe security controls)
-- Ongoing discussion: [http://example.com/#TODO](http://example.com/#TODO)
+- Ongoing discussion: https://github.com/OS2sandbox/os2skole-PoC/pull/42
 
 ### 💡[5] Sikkerhedskontroller
 
@@ -55,7 +55,7 @@
 ### 💡[9] Applikationslandskab / -integration
 
 - Ad hoc discussion starter: [https://github.com/0xf1e/os2skole-PoC/blob/updated-architecture-progress/docs/architecture.md#os2skole-infrastructure-overview](https://github.com/0xf1e/os2skole-PoC/blob/updated-architecture-progress/docs/architecture.md#os2skole-infrastructure-overview) (information collected for cost estimate, including component interactions)
-- Ongoing discussion: [http://example.com/#TODO](http://example.com/#TODO) (refining cost estimates and component interactions)
+- Ongoing discussion: https://github.com/OS2sandbox/os2skole-PoC/pull/43 (refining cost estimates and component interactions)
 
 ### 💡[10] Løsningskomponent
 
