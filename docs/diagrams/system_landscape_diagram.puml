@@ -1,9 +1,6 @@
 @startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
 
-' Styling for IAM services
-AddElementTag("IAM_Service", $bgColor="#3493c3", $fontColor="#000000")
-
 title OS2Skole System Landscape
 
 ' --- Top Left: End User System Group ---
@@ -34,21 +31,25 @@ Boundary(b_delivery, "OS2Skole Delivery Platform") {
 
 ' --- MAIN BLOCK: OS2Skole Service ---
 Boundary(b_service, "OS2Skole Service") {
+    
+    ' Sub-group: Left Core Infrastructure
+    Boundary(b_core, "Core Identity & Access Services", "🔍 See identity and access architecture diagram.") {
+        System(dashboard, "Dashboard Portal")
+        System(iam, "Identity & Access Management", "configured to be compliant with applicable security regulations.")
+        System(iam_addr, "IAM to Address Book Conversion")
+    }
 
     ' Sub-group: User Facing Internal Apps
     Boundary(b_int_apps, "Internal user-facing applications", "configured with Danish localization and OS2skole-specific theming.") {
-        System(dashboard, "Dashboard Portal", "Provides the login interface. 🔍 See 'identity and access architecture' diagram.", $tags="IAM_Service")
         System(classroom, "Classroom Management System")
-        System(cloud, "Cloud Drive", "🔍 see 'Cloud Drive from a supplier's perspective' diagram.")
+        System(cloud, "Cloud Drive", "🔍 see Cloud Drive from a supplier's perspective diagram.")
         System(groupware, "Groupware UI")
         System(web_build, "Websuite builder")
         System(meet, "Video Meeting Platform")
     }
 
     ' Sub-group: Office/Utility Services
-    Boundary(b_utility, "Backing Services") {
-        System(iam_backend, "IAM Backend", "Core authentication and authorization logic. 🔍 See 'identity and access architecture' diagram.", $tags="IAM_Service")
-        System(iam_addr, "IAM to Address Book Conversion", "", $tags="IAM_Service")
+    Boundary(b_utility, "Service Backends/Protocol Servers") {
         System(office, "Office Suite", "based on interoperable protocols")
         System(share, "File Share System", "based on interoperable protocols")
         System(cal, "Calendar service", "based on interoperable protocols")
@@ -67,24 +68,31 @@ System_Ext(ext_cal_serv, "External Calendar Service")
 ' Relationships
 BiRel(user, local_os, "Interacts")
 Rel(local_os, dashboard, "accesses")
-Rel(dashboard, iam_backend, "")
-BiRel(iam_backend, iam_addr, "")
 Rel(mdm, local_os, "provisions")
 Rel(local_os, lst, "requests information from")
+Rel(iam, idp, "Initiate authentication flow")
+Rel(idp, iam, "Authentication Flow Response")
 Rel(admin1, audit, "reviews")
 Rel(admin2, deploy, "reviews")
+Rel(partners, iam, "requests authentication")
+Rel(b_int_apps, iam, "requests authentication")
+Rel(iam, b_int_apps, "Responds with Authentication, Roles and Groups")
+Rel(dashboard, b_int_apps, "redirect to")
+Rel(dashboard, partners, "redirect to")
 Rel(groupware, cal, "requests information and actions")
 Rel(groupware, addr, "requests information and actions")
 Rel(groupware, email, "requests information and actions")
 Rel(cloud, share, "requests information and actions")
 BiRel(cloud, office, "Exchange Information")
 Rel(classroom, share, "requests information and actions")
+Rel(iam, skole_data, "requests information")
 Rel(b_service, audit, "sends audit traces, logs and telemetry to")
 Rel(deploy, b_service, "Rolls out updates of")
 Rel(cal_conv, cal, "informed about updated events")
 Rel(cal, cal_conv, "requests calendar data")
 Rel(ext_cal_serv, cal_conv, "informs about updated events")
 Rel(cal_conv, ext_cal_serv, "requests calendar data")
+Rel(iam, iam_addr, "Informs about updated identities")
 Rel(iam_addr, addr, "requests update of address book information")
 Rel(classroom, partners, "requests information about user content (specific systems)")
 
