@@ -63,7 +63,7 @@ System_Ext(ext_cal_serv, "External Calendar Service")
 
 ' Relationships
 BiRel(user, local_os, "Interacts")
-BiRel(local_os, iam_services, "")
+Rel(local_os, iam_services, "")
 Rel(mdm, local_os, "provisions")
 Rel(local_os, lst, "requests information from")
 BiRel(iam_services, idp, "")
