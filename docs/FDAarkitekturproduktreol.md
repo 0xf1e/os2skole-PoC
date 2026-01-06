@@ -1,3 +1,19 @@
+# 🎓  Os2Skole
+## Arkitekturprodukter
+
+Dette dokument adresserer, hvordan en formaliseret rammearkitektur – som den fællesoffentlige Digital Arkitektur (FDA), kan implementeres pragmatisk i en iterativ open source udviklingsproces.
+
+Arkitekturprodukter udstilles i et **åbent, versionsstyret repositorie**. Dokumentationen følger principperne i `FDA arkitekturreolen` og realiseres ved at beskrive diagrammer vha. `C4-modellen` og levere dem direkte i åbne versionstyrbare standard-formater som f.eks `Mermaid` i `Markdown`. Denne tilgang sikrer, at arkitekturbeskrivelserne er tæt integreret med koden og understøtter en hurtig, iterativ udvikling.
+
+_En mere dybdegående beskrivelse af strategien for arkitekturcompliance er beskrevet seperat her: [Plamlagt arkitektur compliance](./arkitektur_compliance.md)_
+
+<br>
+
+## Arkitekturprodukter
+Modeleret efter [FDA Arkitekturreolen](https://arkitektur.digst.dk/metoder/arkitekturmetoder/introduktion-til-retningslinjer-formidling-og-dokumentation-af-0#arkitekturreol)
+
+<br>
+
 🔍: Items identified for further discussion.
 
 💡: Items with ongoing or started discussions.
