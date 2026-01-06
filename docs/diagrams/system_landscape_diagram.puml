@@ -2,7 +2,7 @@
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
 
 ' Styling for IAM services
-AddElementTag("IAM_Service", $bgColor="#ADFF2F", $fontColor="#000000")
+AddElementTag("IAM_Service", $bgColor="#3493c3", $fontColor="#000000")
 
 title OS2Skole System Landscape
 
