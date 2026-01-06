@@ -37,7 +37,7 @@ Boundary(b_service, "OS2Skole Service") {
 
     ' Sub-group: User Facing Internal Apps
     Boundary(b_int_apps, "Internal user-facing applications", "configured with Danish localization and OS2skole-specific theming.") {
-        System(dashboard, "Dashboard Portal", "Provides the login interface.", $tags="IAM_Service")
+        System(dashboard, "Dashboard Portal", "Provides the login interface. 🔍 See identity and access architecture diagram.", $tags="IAM_Service")
         System(classroom, "Classroom Management System")
         System(cloud, "Cloud Drive", "🔍 see Cloud Drive from a supplier's perspective diagram.")
         System(groupware, "Groupware UI")
@@ -46,7 +46,7 @@ Boundary(b_service, "OS2Skole Service") {
     }
 
     ' Sub-group: Office/Utility Services
-    Boundary(b_utility, "Service Backends/Protocol Servers") {
+    Boundary(b_utility, "Backing Services") {
         System(iam_backend, "IAM Backend", "Core authentication and authorization logic. 🔍 See identity and access architecture diagram.", $tags="IAM_Service")
         System(iam_addr, "IAM to Address Book Conversion", "", $tags="IAM_Service")
         System(office, "Office Suite", "based on interoperable protocols")
@@ -67,39 +67,25 @@ System_Ext(ext_cal_serv, "External Calendar Service")
 ' Relationships
 BiRel(user, local_os, "Interacts")
 Rel(local_os, dashboard, "accesses")
+Rel(dashboard, iam_backend, "")
+BiRel(iam_backend, iam_addr, "")
 Rel(mdm, local_os, "provisions")
 Rel(local_os, lst, "requests information from")
-Rel(iam_backend, idp, "Initiate authentication flow")
-Rel(idp, iam_backend, "Authentication Flow Response")
 Rel(admin1, audit, "reviews")
 Rel(admin2, deploy, "reviews")
-Rel(partners, iam_backend, "requests authentication")
-Rel(b_int_apps, iam_backend, "requests authentication")
-Rel(iam_backend, b_int_apps, "Responds with Authentication, Roles and Groups")
-Rel(dashboard, iam_backend, "initiates authentication flow")
-Rel(dashboard, b_int_apps, "redirect to")
-Rel(dashboard, partners, "redirect to")
 Rel(groupware, cal, "requests information and actions")
 Rel(groupware, addr, "requests information and actions")
 Rel(groupware, email, "requests information and actions")
 Rel(cloud, share, "requests information and actions")
 BiRel(cloud, office, "Exchange Information")
 Rel(classroom, share, "requests information and actions")
-Rel(iam_backend, skole_data, "requests information")
 Rel(b_service, audit, "sends audit traces, logs and telemetry to")
 Rel(deploy, b_service, "Rolls out updates of")
 Rel(cal_conv, cal, "informed about updated events")
 Rel(cal, cal_conv, "requests calendar data")
 Rel(ext_cal_serv, cal_conv, "informs about updated events")
 Rel(cal_conv, ext_cal_serv, "requests calendar data")
-Rel(iam_backend, iam_addr, "Informs about updated identities")
 Rel(iam_addr, addr, "requests update of address book information")
 Rel(classroom, partners, "requests information about user content (specific systems)")
-
-legend right
-   **Color Legend**
-   |= Color |= Meaning |
-   | <back:#3493c3>      | Identity and Access Management (IAM) Services |
-endlegend
 
 @enduml
