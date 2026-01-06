@@ -33,7 +33,7 @@ Boundary(b_delivery, "OS2Skole Delivery Platform") {
 Boundary(b_service, "OS2Skole Service") {
     
     ' Merged Core Identity & Access Services
-    System(iam_services, "Core Identity & Access Services", "🔍 See identity and access architecture diagram.")
+    System(iam_services, "Identity & Access Services", "🔍 See 'identity and access architecture' diagram.")
 
     ' Sub-group: User Facing Internal Apps
     Boundary(b_int_apps, "Internal user-facing applications", "configured with Danish localization and OS2skole-specific theming.") {
