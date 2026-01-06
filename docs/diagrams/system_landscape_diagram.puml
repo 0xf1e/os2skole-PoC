@@ -33,14 +33,13 @@ Boundary(b_delivery, "OS2Skole Delivery Platform") {
 Boundary(b_service, "OS2Skole Service") {
     
     ' Sub-group: Left Core Infrastructure
-    Boundary(b_core, "Core Identity & Access Services", "🔍 See identity and access architecture diagram.") {
+    Boundary(b_core, "Admin Portal", "🔍 See identity and access architecture diagram.") {
         System(dashboard, "Dashboard Portal")
-        System(iam, "Identity & Access Management", "configured to be compliant with applicable security regulations.")
-        System(iam_addr, "IAM to Address Book Conversion")
     }
 
     ' Sub-group: User Facing Internal Apps
     Boundary(b_int_apps, "Internal user-facing applications", "configured with Danish localization and OS2skole-specific theming.") {
+        System(iam_frontend, "IAM Frontend", "<color:lightgreen>Provides the login interface.")
         System(classroom, "Classroom Management System")
         System(cloud, "Cloud Drive", "🔍 see Cloud Drive from a supplier's perspective diagram.")
         System(groupware, "Groupware UI")
@@ -50,6 +49,8 @@ Boundary(b_service, "OS2Skole Service") {
 
     ' Sub-group: Office/Utility Services
     Boundary(b_utility, "Service Backends/Protocol Servers") {
+        System(iam_backend, "IAM Backend", "<color:lightgreen>Core authentication and authorization logic.")
+        System(iam_addr, "IAM to Address Book Conversion", "<color:lightgreen>")
         System(office, "Office Suite", "based on interoperable protocols")
         System(share, "File Share System", "based on interoperable protocols")
         System(cal, "Calendar service", "based on interoperable protocols")
@@ -70,13 +71,15 @@ BiRel(user, local_os, "Interacts")
 Rel(local_os, dashboard, "accesses")
 Rel(mdm, local_os, "provisions")
 Rel(local_os, lst, "requests information from")
-Rel(iam, idp, "Initiate authentication flow")
-Rel(idp, iam, "Authentication Flow Response")
+Rel(iam_backend, idp, "Initiate authentication flow")
+Rel(idp, iam_backend, "Authentication Flow Response")
 Rel(admin1, audit, "reviews")
 Rel(admin2, deploy, "reviews")
-Rel(partners, iam, "requests authentication")
-Rel(b_int_apps, iam, "requests authentication")
-Rel(iam, b_int_apps, "Responds with Authentication, Roles and Groups")
+Rel(partners, iam_backend, "requests authentication")
+Rel(b_int_apps, iam_backend, "requests authentication")
+Rel(iam_backend, b_int_apps, "Responds with Authentication, Roles and Groups")
+Rel(dashboard, iam_frontend, "redirects to for login")
+Rel(iam_frontend, iam_backend, "handles authentication flow")
 Rel(dashboard, b_int_apps, "redirect to")
 Rel(dashboard, partners, "redirect to")
 Rel(groupware, cal, "requests information and actions")
@@ -85,14 +88,14 @@ Rel(groupware, email, "requests information and actions")
 Rel(cloud, share, "requests information and actions")
 BiRel(cloud, office, "Exchange Information")
 Rel(classroom, share, "requests information and actions")
-Rel(iam, skole_data, "requests information")
+Rel(iam_backend, skole_data, "requests information")
 Rel(b_service, audit, "sends audit traces, logs and telemetry to")
 Rel(deploy, b_service, "Rolls out updates of")
 Rel(cal_conv, cal, "informed about updated events")
 Rel(cal, cal_conv, "requests calendar data")
 Rel(ext_cal_serv, cal_conv, "informs about updated events")
 Rel(cal_conv, ext_cal_serv, "requests calendar data")
-Rel(iam, iam_addr, "Informs about updated identities")
+Rel(iam_backend, iam_addr, "Informs about updated identities")
 Rel(iam_addr, addr, "requests update of address book information")
 Rel(classroom, partners, "requests information about user content (specific systems)")
 
