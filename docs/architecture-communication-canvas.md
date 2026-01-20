@@ -6,13 +6,13 @@
 
 - Provide a school workspace for students in Danish elementary schools.
 - Replace current closed-source applications (Google Workspace, Microsoft Office).
-- Ensure EU sovereignty and avoid power imbalances towards large software corporations.
+- Ensure EU sovereignty and avoid power imbalances towards global software corporations.
 
 ## Core Functions 📋
 *What are the most important functions?<br>What activities or processes does it offer?*
 
 - Unified platform for documents and classroom communication.
-- Homework management and exercise/template provision.
+- Homework management.
 - Digital communication between teachers and students.
 - Access to calendars, address books, and email management.
 - Unified login for both internal system components and external suppliers.
@@ -27,11 +27,13 @@ Who are our most important contributors?*
 - **Value for:** Students, teachers, school operators, and school administrators.
 - **Development financed by:** OS2 (member municipalities).
 - **Operations financed by:** Municipalities.
-- **Customers:** Aarhus, Aalborg, Ballerup.
+- **Customers:** 23 Danish municipalities, the largest of them being Aarhus, Aalborg, and Odense.
 - **Contributors:** Multiple suppliers (selected on a per-component basis).
 
 ## Quality Requirements ⭐️
 *Speed, scalability, reliability, usability, security, safety, capacity or similar*
+
+Terms are used as defined in the [ISO 25010 standard](https://iso25000.com/index.php/en/iso-25000-standards/iso-25010).
 
 - Security
 - Elasticity/Capacity
@@ -56,7 +58,7 @@ Users access the system via web browsers. The system interfaces with Identity Pr
     InternalComponents[Internal Components<br/>e.g. Classroom Mgmt]-->|pulls data via API|ExtApps
 ```
 
-## Core Decisions - Good or Bad 🚦
+## Core Architectural Decisions 🚦
 *Which decisions lead to the current state of the system?*
 
 - Replace non-EU sovereign components with Danish partners and integrate them.
@@ -88,15 +90,11 @@ Users access the system via web browsers. The system interfaces with Identity Pr
 - Teacher exercise assignment
 - Student exercise submission
 
-## Core Risks and Missing Information ❓
+## Technical Challenges and Risks ❓
 *Potential problems and risks?<br>What information is missing or has gotten lost?<br>What is hindering the team from delivering better value faster?*
 
-- **Risks:**
-    - Many "unknown unknowns" due to lack of experience with projects of this scale.
-    - Risk of not sufficiently incorporating feedback from prospective users.
-- **Questions/Missing Info:**
-    - Can we identify the unknown unknowns behind this project?
-    - Can we continuously incorporate end-user feedback in an effective way?
+- Can we identify the unknown unknowns behind this project?
+- Can we continuously incorporate end-user feedback in an effective way?
 
 <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png" alt="CC BY-SA License" style="height: 20px;"/> Software Architecture Canvas is licensed under Attribution-ShareAlike 4.0 International. 
 [https://canvas.arc42.org](https://canvas.arc42.org)
