@@ -40,13 +40,13 @@ Terms are used as defined in the [ISO 25010 standard](https://iso25000.com/index
 Users access the system via web browsers. The system interfaces with Identity Providers (EasyIQ, UniLogin) and Skolegrunddata. The main portal redirects to external user-facing applications, while internal components (like the classroom management system) pull data from these external applications via APIs.
 
 ```mermaid
- graph LR
-    Users((Users))-->|uses (via Web Browser)|Portal[OS2Skole Portal]
-    Portal-->|authenticates via|IdPs[Identity Providers<br/>EasyIQ/UniLogin]
-    Portal-->|queries user data from|SkoleData[Skolegrunddata]
-    Portal-->|redirects to|ExtApps[External User-Facing Apps]
-    Portal-->|redirects to|InternalComponents[Internal Components<br/>e.g. Classroom Mgmt]
-    InternalComponents-->|pulls data from (via API)|ExtApps
+graph LR
+    Users((Users)) -->|"uses (via Web Browser)"| Portal[OS2Skole Portal]
+    Portal -->|"authenticates via"| IdPs["Identity Providers<br/>EasyIQ/UniLogin"]
+    Portal -->|"queries user data from"| SkoleData[Skolegrunddata]
+    Portal -->|"redirects to"| ExtApps[External User-Facing Apps]
+    Portal -->|"redirects to"| InternalComponents["Internal Components<br/>e.g. Classroom Mgmt"]
+    InternalComponents -->|"pulls data from (via API)"| ExtApps
 ```
 
 ## Core Architectural Decisions 🚦
