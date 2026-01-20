@@ -45,7 +45,8 @@ Users access the system via web browsers. The system interfaces with Identity Pr
     Portal-->|authenticates via|IdPs[Identity Providers<br/>EasyIQ/UniLogin]
     Portal-->|queries user data|SkoleData[Skolegrunddata]
     Portal-->|redirects to|ExtApps[External User-Facing Apps]
-    InternalComponents[Internal Components<br/>e.g. Classroom Mgmt]-->|pulls data via API|ExtApps
+    Portal-->|redirects to|InternalComponents[Internal Components<br/>e.g. Classroom Mgmt]
+    InternalComponents-->|pulls data via API|ExtApps
 ```
 
 ## Core Architectural Decisions 🚦
