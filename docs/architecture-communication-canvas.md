@@ -41,12 +41,12 @@ Users access the system via web browsers. The system interfaces with Identity Pr
 
 ```mermaid
  graph LR
-    Users((Users))-->|use via Web Browser|Portal[OS2Skole Portal]
+    Users((Users))-->|uses (via Web Browser)|Portal[OS2Skole Portal]
     Portal-->|authenticates via|IdPs[Identity Providers<br/>EasyIQ/UniLogin]
-    Portal-->|queries user data|SkoleData[Skolegrunddata]
+    Portal-->|queries user data from|SkoleData[Skolegrunddata]
     Portal-->|redirects to|ExtApps[External User-Facing Apps]
     Portal-->|redirects to|InternalComponents[Internal Components<br/>e.g. Classroom Mgmt]
-    InternalComponents-->|pulls data via API|ExtApps
+    InternalComponents-->|pulls data from (via API)|ExtApps
 ```
 
 ## Core Architectural Decisions 🚦
