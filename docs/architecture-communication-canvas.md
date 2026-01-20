@@ -17,7 +17,7 @@
 
 ## Key Stakeholder 🧑‍🧑‍🧒
 
-- **Value for:** Students, teachers, school operators, and school administrators.
+- **Value for:** Students, teachers, and school administrators.
 - **Development financed by:** OS2 (member municipalities).
 - **Operations financed by:** Municipalities.
 - **Customers:** 23 Danish municipalities, the largest of them being Aarhus, Aalborg, and Odense.
