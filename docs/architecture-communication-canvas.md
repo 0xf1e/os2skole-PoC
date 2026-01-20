@@ -2,14 +2,12 @@
 *System: OS2Skole | Created by: @0xf1e | Date/Iteration: January 20th, 2026 |*
 
 ## Value Proposition 💼
-*Major objectives.<br>What value does the system deliver?<br>What are the major business goals?*
 
 - Provide a school workspace for students in Danish elementary schools.
 - Replace current closed-source applications (Google Workspace, Microsoft Office).
 - Ensure EU sovereignty and avoid power imbalances towards global software corporations.
 
 ## Core Functions 📋
-*What are the most important functions?<br>What activities or processes does it offer?*
 
 - Unified platform for documents and classroom communication.
 - Homework management.
@@ -18,11 +16,6 @@
 - Unified login for both internal system components and external suppliers.
 
 ## Key Stakeholder 🧑‍🧑‍🧒
-*For whom are we creating value?<br>
-Who is paying for development?<br>
-Who is paying for operations?<br>
-Who are our most important customers?<br>
-Who are our most important contributors?*
 
 - **Value for:** Students, teachers, school operators, and school administrators.
 - **Development financed by:** OS2 (member municipalities).
@@ -31,7 +24,6 @@ Who are our most important contributors?*
 - **Contributors:** Multiple suppliers (selected on a per-component basis).
 
 ## Quality Requirements ⭐️
-*Speed, scalability, reliability, usability, security, safety, capacity or similar*
 
 Terms are used as defined in the [ISO 25010 standard](https://iso25000.com/index.php/en/iso-25000-standards/iso-25010).
 
@@ -45,8 +37,6 @@ Terms are used as defined in the [ISO 25010 standard](https://iso25000.com/index
 - Legal compliance
 
 ## Business Context 🔗
-*What are the most important external interfaces or neighboring systems?*
-
 Users access the system via web browsers. The system interfaces with Identity Providers (EasyIQ, UniLogin) and Skolegrunddata. The main portal redirects to external user-facing applications, while internal components (like the classroom management system) pull data from these external applications via APIs.
 
 ```mermaid
@@ -59,7 +49,6 @@ Users access the system via web browsers. The system interfaces with Identity Pr
 ```
 
 ## Core Architectural Decisions 🚦
-*Which decisions lead to the current state of the system?*
 
 - Replace non-EU sovereign components with Danish partners and integrate them.
 - Multi-provider setup where specific components are handled by specialized providers.
@@ -67,7 +56,6 @@ Users access the system via web browsers. The system interfaces with Identity Pr
 - Agile development style.
 
 ## Technologies 🛠️
-*Important technologies used for development and operation*
 
 - Specific technologies are to be determined through cooperation with module suppliers.
 - **Key Patterns:**
@@ -78,7 +66,6 @@ Users access the system via web browsers. The system interfaces with Identity Pr
     - Backing services accessed through open protocols rather than app-specific APIs.
 
 ## Components / Modules 🧊
-*Major building blocks of the system*
 
 - Identity brokering
 - Document sharing
@@ -91,7 +78,6 @@ Users access the system via web browsers. The system interfaces with Identity Pr
 - Student exercise submission
 
 ## Technical Challenges and Risks ❓
-*Potential problems and risks?<br>What information is missing or has gotten lost?<br>What is hindering the team from delivering better value faster?*
 
 - Can we identify the unknown unknowns behind this project?
 - Can we continuously incorporate end-user feedback in an effective way?
