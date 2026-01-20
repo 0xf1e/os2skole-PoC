@@ -51,12 +51,12 @@ Users access the system via web browsers. The system interfaces with Identity Pr
 
 ## Core Architectural Decisions 🚦
 
-- We replace non-EU-sovereign components in the current student workspace infrastructure with open-source alternatives.  (Why? We consider open source components to be the best strategical fit.)
-- We design our system to coexist and integrate with existing EU-sovereign components. (Why? We want to profit from the success of existing solutions and keep our project's scope within reason.)
-- The project is developed as a Multi-provider setup, where specific components are handled by specialized providers. (Why? We want to foster a competitive landscape of specialized providers.)
-- The connection between components in this project follows a microservices architectural style. (Why? It is the most amenable to an agile multi-provider development process.)
-- We leave the individual implementation of the components up to the providers, as long as they meet the quality requirements. (Why? We want providers to be able to reuse parts of their existing technological stack.)
-- We follow an agile development style, where we regularly incorporate feedback from test users and providers. (Why? It is the most likely to lead to a successful project outcome with a small team and budget.)
+- We replace non-EU-sovereign components in the current student workspace infrastructure with open-source alternatives.  (*Why?* We consider open source components to be the best strategical fit.)
+- We design our system to coexist and integrate with existing EU-sovereign components. (*Why?* We want to profit from the success of existing solutions and keep our project's scope within reason.)
+- The project is developed as a Multi-provider setup, where specific components are handled by specialized providers. (*Why?* We want to foster a competitive landscape of specialized providers.)
+- The connection between components in this project follows a microservices architectural style. (*Why?* It is the most amenable to an agile multi-provider development process.)
+- We leave the individual implementation of the components up to the providers, as long as they meet the quality requirements. (*Why?* We want providers to be able to reuse parts of their existing technological stack.)
+- We follow an agile development style, where we regularly incorporate feedback from test users and providers. (*Why?* It is the most likely to lead to a successful project outcome with a small team and budget.)
 
 ## Technologies 🛠️
 
