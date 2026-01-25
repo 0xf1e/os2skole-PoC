@@ -30,7 +30,6 @@ Terms are used as defined in the [ISO 25010 standard](https://iso25000.com/index
 - Security (*Why?* We want student data to be safe, and actions in the system to be accountable and without repudiation.)
 - Elasticity/Capacity (*Why?* We want the system to stay responsive under exam situations.)
 - Learnability/Usability (*Why?* We want end users to be able to use the system with little external support.)
-- Replaceability (*Why?* We want to replace existing "Big Tech" solutions.)
 - Compatibility (*Why?* We do not want to get locked into specific providers' unique solutions.)
 - Recoverability (*Why?* We want students to be able to trust that their work does not get lost.)
 - Maintainability (*Why?* We want to run this project for a long time, with changing staff and changing requirements.)
@@ -93,6 +92,7 @@ Proposed Infrastructure Component Groups:
 - Can we identify the unknown unknowns behind this project as soon as they become relevant?
 - Can we continuously incorporate end-user feedback in an effective way?
 - Can we efficiently incorportate the experiences of the different infrastructure/module suppliers?
+- How do we ensure that costs for technical end-user support can be kept low?
 
 <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png" alt="CC BY-SA License" style="height: 20px;"/> Software Architecture Canvas is licensed under Attribution-ShareAlike 4.0 International. 
 [https://canvas.arc42.org](https://canvas.arc42.org)
